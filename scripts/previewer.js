@@ -8,7 +8,7 @@ const gulp = require('gulp');
 const Task = require('data.task');
 const I = require('immutable');
 const { writeToDist } = require('./ui');
-var PORT = process.env.PORT || 3003; 
+var PORT = process.env.PORT || 5000;
 
 const createPreviewer =
   process.env.NDS_PREVIEWER === 'development'
