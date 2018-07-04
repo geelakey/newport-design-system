@@ -69,6 +69,6 @@ const listen = () =>
   });
 
 console.log('Start compiling JS library for Previewer...');
-console.log('Served: http://localhost:' + port);
+console.log('Served: http://localhost:' + PORT);
 
 writeToDist().fork(console.error, listen);
