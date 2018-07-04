@@ -8,7 +8,7 @@ const gulp = require('gulp');
 const Task = require('data.task');
 const I = require('immutable');
 const { writeToDist } = require('./ui');
-var PORT = process.env.PORT || 5000;
+var PORT = process.env.PORT || 8080;
 
 const createPreviewer =
   process.env.NDS_PREVIEWER === 'development'
@@ -69,5 +69,6 @@ const listen = () =>
   });
 
 console.log('Start compiling JS library for Previewer...');
+console.log('Served: http://localhost:' + port);
 
 writeToDist().fork(console.error, listen);
