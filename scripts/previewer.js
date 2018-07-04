@@ -8,6 +8,7 @@ const gulp = require('gulp');
 const Task = require('data.task');
 const I = require('immutable');
 const { writeToDist } = require('./ui');
+var PORT = process.env.PORT || 3003; 
 
 const createPreviewer =
   process.env.NDS_PREVIEWER === 'development'
@@ -34,7 +35,7 @@ const previewer = createPreviewer({
 });
 
 const listen = () =>
-  previewer.listen(3003, ({ server, emit }) => {
+  previewer.listen(PORT, ({ server, emit }) => {
     // Sass
     const sassWatcher = gulp.watch(
       watchPaths.sass,
